@@ -33,7 +33,7 @@ export class AppComponent {
   send(){
     this.loading = true;    
    if(this.resipientModel.to == null){
-      this.alertService.error('Sorry Number Can not be Empty')
+      this.alertService.error('Please input phone number first')
       this.loading = false;
    }
    else{
