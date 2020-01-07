@@ -1,6 +1,8 @@
 import { Component, Input} from '@angular/core';
 import { Sms, Resipient } from './sms.model';
-import { AppService } from './app.service';
+import { AppService } from './_services/app.service';
+import { AlertService } from './_services/alert.service';
+
 
 
 
@@ -19,7 +21,7 @@ export class AppComponent {
   resipientModel: Resipient = new Resipient()
   title = 'angular-bootstra-challenge';
 
-  constructor(private appService: AppService){
+  constructor(private appService: AppService, private alertService: AlertService){
 
   }
 
@@ -31,7 +33,7 @@ export class AppComponent {
   send(){
     this.loading = true;    
    if(this.resipientModel.to == null){
-      alert('Please the enter the Number');
+      this.alertService.error('Sorry Number Can not be Empty')
       this.loading = false;
    }
    else{
@@ -42,14 +44,26 @@ export class AppComponent {
       this.state = 'sent';
       this.loading = false;
       this.smsResponse = response;
-      
+      this.alertService.success('You have succesfully sent your message');
+      this.reset();     
       console.log('response', this.smsResponse);
     },error =>{
       this.loading=false;
         this.smsError = error
+        this.alertService.error('Error Sending the text message');
+        // this.reset();
         console.log('error', error);
     })
    }
   }
+
+  reset(){
+    this.smsModel.fname = undefined;
+    this.smsModel.message = undefined;
+    this.smsModel.to = undefined;
+    this.resipientModel.to = undefined;
+  }
+
+
 
 }
