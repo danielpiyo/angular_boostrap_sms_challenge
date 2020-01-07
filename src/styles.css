@@ -1,8 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
-@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
 .panel-primary>.panel-heading {
     color: #fff;
-    background-color: #337ab7;
+    background-color: #1976d2;;
     border-color: #337ab7;
   }
   .panel-heading {

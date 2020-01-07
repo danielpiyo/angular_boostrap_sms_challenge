@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import {MatCardModule, MatFormFieldModule, MatInputModule, MatButtonModule } from '@angular/material';
+import {MatCardModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 
@@ -22,7 +22,8 @@ import {AlertComponent } from './_directives/alert.component';
     AppRoutingModule,
     NgbModule,
     FormsModule,HttpClientModule,
-    MatCardModule, MatFormFieldModule, MatInputModule, BrowserAnimationsModule, MatButtonModule
+    MatCardModule, MatFormFieldModule, MatInputModule, 
+    BrowserAnimationsModule, MatButtonModule, MatIconModule
   ],
   providers: [AppService, AlertService],
   bootstrap: [AppComponent]
