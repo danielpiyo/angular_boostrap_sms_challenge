@@ -10,7 +10,7 @@ You must ensure you have Node js installed in your machine
 Clone the Repository using git clone https://github.com/danielpiyo/angular_boostrap_sms_challenge.
 
 Run npm install  -- this is to install the packages or modules 
-## To lounch
+## To launch
 Run `ng serve` or `ng serve --open` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
