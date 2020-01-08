@@ -66,6 +66,17 @@
     opacity: 0.8;
   }
 
+  .gen-body{
+    /* background-image: url('../assets/curved.jpg');
+    background-image:url('../assets/curved.jpg');
+    background:linear-gradient(rgba(0,0,0, 0.1), rgba(0,0,0, 0.1)), url('../assets/curved.jpg');
+    background-position:left top; */
+    background-color: rgb(255, 255, 255);
+    background-attachment:inherit;
+    background-size:cover;
+    margin-bottom: 0px;
+  }
+
   .content {
     display: flex;
     margin: 32px auto;
@@ -75,6 +86,8 @@
     align-items: center;
     border: 2px solid #4985b9;
     border-radius: 6px;
+    /* border-bottom: 0px; */
+    
   }
   .info-head{
     width: 100%;
@@ -154,32 +167,6 @@
     margin-left: 60px;
   }
 
-  svg#rocket {
-    width: 80px;
-    position: absolute;
-    left: -10px;
-    top: -24px;
-  }
-
-  svg#rocket-smoke {
-    height: 100vh;
-    position: absolute;
-    top: 10px;
-    right: 180px;
-    z-index: -10;
-  }
-
-  a,
-  a:visited,
-  a:hover {
-    color: #1976d2;
-    text-decoration: none;
-  }
-
-  a:hover {
-    color: #125699;
-  }
-
   .terminal {
     position: relative;
     width: 80%;
@@ -214,44 +201,13 @@
     margin: 0;
   }
 
-  .circle-link {
-    height: 40px;
-    width: 40px;
-    border-radius: 40px;
-    margin: 8px;
-    background-color: white;
-    border: 1px solid #eeeeee;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-    transition: 1s ease-out;
-  }
-
-  .circle-link:hover {
-    transform: translateY(-0.25rem);
-    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
-  }
-
-  footer {
-    margin-top: 8px;
-    display: flex;
-    align-items: center;
-    line-height: 20px;
-  }
-
-  footer a {
-    display: flex;
-    align-items: center;
-  }
-
   svg#clouds {
     position: fixed;
-    bottom: -160px;
+    bottom: -150px;
     left: -230px;
     z-index: -10;
-    width: 1920px;
+    width: 1800px;
+    
   }
 
 
@@ -272,10 +228,7 @@
       margin-left: 72px;
     }
 
-    svg#rocket-smoke {
-      right: 120px;
-      transform: rotate(-5deg);
-    }
+    
   }
 
   @media screen and (max-width: 575px) {
@@ -284,3 +237,8 @@
       visibility: hidden;
     }
   }
+
+  .sys-footer{
+    /* background-image: url('../assets/footer.jpg'); */
+    text-align: center;
+}
