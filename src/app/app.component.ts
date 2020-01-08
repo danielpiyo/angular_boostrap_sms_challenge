@@ -7,57 +7,58 @@ import { AlertService } from './_services/alert.service';
 
 
 @Component({
-  selector: 'app-root', 
+  selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
- 
   smsResponse: any;
+  phoneCountry = '+254';
   smsError: any;
   loading = false;
   state = 'normal';
   smsModel: Sms = new Sms();
-  resipientModel: Resipient = new Resipient()
+  resipientModel: Resipient = new Resipient();
   title = 'angular-bootstra-challenge';
+  year: any;
 
-  constructor(private appService: AppService, private alertService: AlertService){
-
+  constructor(private appService: AppService, private alertService: AlertService) {
+    this.year =  this.year = (new Date()).getFullYear();
   }
 
-  ngOnInit(){
+  // tslint:disable-next-line: use-lifecycle-interface
+  ngOnInit() {
 
   }
 
   // send message
-  send(){
-    this.loading = true;    
-   if(this.resipientModel.to == null){
-      this.alertService.error('Please input phone number first')
+  send() {
+    this.loading = true;
+    if (this.resipientModel.to == null) {
+      this.alertService.error('Please input phone number first');
       this.loading = false;
-   }
-   else{
+   } else {
     console.log(this.smsModel);
-    this.smsModel.to = "+254" + this.resipientModel.to;
+    this.smsModel.to = '+254' + this.resipientModel.to;
     this.appService.sendNow(this.smsModel)
-    .subscribe((response)=>{
+    .subscribe((response) => {
       this.state = 'sent';
       this.loading = false;
       this.smsResponse = response;
       this.alertService.success('You have succesfully sent your message');
-      this.reset();     
+      this.reset();
       console.log('response', this.smsResponse);
-    },error =>{
-      this.loading=false;
-        this.smsError = error
-        this.alertService.error('Error Sending the text message');
+    }, error => {
+      this.loading = false;
+      this.smsError = error;
+      this.alertService.error('Error Sending the text message');
         // this.reset();
-        console.log('error', error);
-    })
+      console.log('error', error);
+    });
    }
   }
 
-  reset(){
+  reset() {
     this.smsModel.fname = undefined;
     this.smsModel.message = undefined;
     this.smsModel.to = undefined;

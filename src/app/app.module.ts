@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {MatCardModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule } from '@angular/material';
@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import {AppService } from './_services/app.service';
 import { AlertService} from './_services/alert.service';
 import {AlertComponent } from './_directives/alert.component';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 @NgModule({
   declarations: [
@@ -21,11 +22,15 @@ import {AlertComponent } from './_directives/alert.component';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    FormsModule,HttpClientModule,
-    MatCardModule, MatFormFieldModule, MatInputModule, 
+    FormsModule, HttpClientModule,
+    MatCardModule, MatFormFieldModule, MatInputModule,
     BrowserAnimationsModule, MatButtonModule, MatIconModule
   ],
   providers: [AppService, AlertService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA,
+    NO_ERRORS_SCHEMA
+  ]
 })
 export class AppModule { }
